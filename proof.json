@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "title": "Make bounty submissions idempotent under concurrency",
+  "bounty_uuid": "633062af-7ef8-433d-af44-74f34a3e72fc",
+  "bounty_number": 13,
+  "escrow_id": 8,
+  "chain_id": 4663,
+  "author": "0xD7AFdc66e0C1Cca76Aca8537f30d10a324E246f1",
+  "signoff": "enueex https://x.com/AjaPawang",
+  "repository": "https://github.com/Wisnuajie923/imdworks-idempotent-submissions",
+  "repository_commit": "c87aa3769c4de1ab0a7724074995668aa2fd2acb",
+  "reproduction": "git clone https://github.com/Wisnuajie923/imdworks-idempotent-submissions.git && cd imdworks-idempotent-submissions && git checkout c87aa3769c4de1ab0a7724074995668aa2fd2acb && python3 run_tests.py",
+  "artifact_url": "https://github.com/Wisnuajie923/imdworks-idempotent-submissions/releases/download/v1.0.0/idempotent-submissions-artifact.zip",
+  "artifact_sha256": "10d2f3b2f687493695ca001e3978738a3e47b716ed8a910a70e85e771bb87006",
+  "report_url": "https://raw.githubusercontent.com/Wisnuajie923/imdworks-idempotent-submissions/c87aa3769c4de1ab0a7724074995668aa2fd2acb/report.json",
+  "report_sha256": "e48c9982b701581e250fa6ef66800132b66f77e09fdfbe1f110226e9b03a4dff",
+  "independent_review_url": "https://raw.githubusercontent.com/Wisnuajie923/imdworks-idempotent-submissions/c87aa3769c4de1ab0a7724074995668aa2fd2acb/INDEPENDENT_REVIEW.json",
+  "fresh_archive_replay_exit": 0,
+  "dependencies": "Python standard library; measured CPython 3.12.3",
+  "limitations": [
+    "One creator-selected winner; submission is not a reward.",
+    "Synthetic local-only benchmark, not a production API or live LLM robustness claim.",
+    "No real credentials or wallets in artifact; no blockchain, transfer, approval or withdrawal is part of replay.",
+    "No real authentication; synthetic wallet labels and disruptive test fault headers are trusted on loopback.",
+    "Scheduling, race winners, ports, PIDs, durations and response ordering vary. Stable invariants, not identical trace bytes, are promised.",
+    "SQLite connections currently rely on delayed garbage collection for close; bounded fixtures passed, but production resource guarantees are not made.",
+    "Duplicate JSON properties use last-key-wins parsing before validation/hash. Original TDD capture-history limitations are documented."
+  ],
+  "results": {
+    "unit_test_methods_passed": 9,
+    "suite_success": true,
+    "http_operations": 222,
+    "trace_rows": 250,
+    "stress_clients": 120,
+    "peak_overlap": 115,
+    "synthetic_wallets": 10,
+    "final_logical_rows": 10,
+    "naive_duplicate_rows": 2,
+    "lost_response": {
+      "commit_rows": 1,
+      "reply_recovered_after_SIGKILL": true,
+      "transport_lost": true
+    },
+    "real_process_interruption": [
+      {
+        "kill_signal": 9,
+        "phase": "pause_before_commit",
+        "rows_before_retry": 0,
+        "stable_reply": true
+      },
+      {
+        "kill_signal": 9,
+        "phase": "pause_after_commit",
+        "rows_before_retry": 2,
+        "stable_reply": true
+      }
+    ]
+  },
+  "explanation": "SQLite UNIQUE(bounty,wallet), BEGIN IMMEDIATE, optimistic versions and reviewed-record triggers preserve logical state. Status/body and mutation commit atomically under a canonical-payload idempotency hash. Real barrier-started HTTP clients and lost-socket/SIGKILL checkpoint recovery tests demonstrate successful bounded workload and the deliberately naive duplicate-row failure."
+}
