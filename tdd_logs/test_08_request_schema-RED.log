@@ -1,0 +1,480 @@
+test_08_request_schema (__main__.Tests.test_08_request_schema) ... 
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='unknown_action') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bool_version') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='review_bool') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='missing_version') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='zero_version') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='float_version') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='negative_version') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='create_version') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='extra_field') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='missing_content') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='array') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='null') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_empty') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_whitespace') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_type') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_bool') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_long') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_empty') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_whitespace') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_type') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_bool') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_long') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_empty') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_whitespace') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_type') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_bool') ... FAIL
+  test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_long') ... FAIL
+test_08_request_schema (__main__.Tests.test_08_request_schema) ... FAIL
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='unknown_action')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 1})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bool_version')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (200, {'bounty': 'fixture-bounty', 'conten[69 chars]00'}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+200
+400
+
++ (400, {'error': 'invalid_request'})
+- (200,
+-  {'bounty': 'fixture-bounty',
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 2,
+-   'wallet': 'synthetic-00'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='review_bool')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'stale_version', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'stale_version', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='missing_version')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'stale_version', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'stale_version', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='zero_version')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'stale_version', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'stale_version', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='float_version')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'stale_version', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'stale_version', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='negative_version')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'stale_version', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'stale_version', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='create_version')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='extra_field')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='missing_content')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='array')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: None != (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='null')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: None != (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_empty')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (201, {'bounty': '', 'content': 'initial',[55 chars]00'}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+201
+400
+
++ (400, {'error': 'invalid_request'})
+- (201,
+-  {'bounty': '',
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': 'synthetic-00'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_whitespace')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (201, {'bounty': '   ', 'content': 'initia[58 chars]00'}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+201
+400
+
++ (400, {'error': 'invalid_request'})
+- (201,
+-  {'bounty': '   ',
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': 'synthetic-00'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_type')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (201, {'bounty': 1, 'content': 'initial', [54 chars]00'}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+201
+400
+
++ (400, {'error': 'invalid_request'})
+- (201,
+-  {'bounty': 1,
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': 'synthetic-00'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_bool')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 1})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='bounty_long')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (201, {'bounty': 'xxxxxxxxxxxxxxxxxxxxxxxx[184 chars]00'}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+201
+400
+
++ (400, {'error': 'invalid_request'})
+- (201,
+-  {'bounty': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': 'synthetic-00'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_empty')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (201, {'bounty': 'fixture-bounty', 'conten[57 chars] ''}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+201
+400
+
++ (400, {'error': 'invalid_request'})
+- (201,
+-  {'bounty': 'fixture-bounty',
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': ''})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_whitespace')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (201, {'bounty': 'fixture-bounty', 'conten[60 chars]  '}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+201
+400
+
++ (400, {'error': 'invalid_request'})
+- (201,
+-  {'bounty': 'fixture-bounty',
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': '   '})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_type')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (201, {'bounty': 'fixture-bounty', 'conten[56 chars]: 1}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+201
+400
+
++ (400, {'error': 'invalid_request'})
+- (201,
+-  {'bounty': 'fixture-bounty',
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': 1})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_bool')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 1})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='wallet_long')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (201, {'bounty': 'fixture-bounty', 'conten[186 chars]xx'}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+201
+400
+
++ (400, {'error': 'invalid_request'})
+- (201,
+-  {'bounty': 'fixture-bounty',
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_empty')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_whitespace')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_type')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_bool')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema) (case='content_long')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 261, in test_08_request_schema
+    self.assertEqual(result, (400, {'error':'invalid_request'}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 2}) != (400, {'error': 'invalid_request'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 2})
++ (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_08_request_schema (__main__.Tests.test_08_request_schema)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 263, in test_08_request_schema
+    self.assertEqual(len(self.s.rows()),1)
+AssertionError: 9 != 1
+
+----------------------------------------------------------------------
+Ran 1 test in 1.145s
+
+FAILED (failures=28)
+
+EXIT_CODE=1

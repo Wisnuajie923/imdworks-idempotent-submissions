@@ -1,0 +1,16 @@
+test_01_unique (__main__.Tests.test_01_unique) ... ok
+test_02_idempotency (__main__.Tests.test_02_idempotency) ... ok
+test_03_versions (__main__.Tests.test_03_versions) ... ok
+test_04_review_and_stress (__main__.Tests.test_04_review_and_stress) ... ok
+test_05_lost_response (__main__.Tests.test_05_lost_response) ... ok
+test_06_process_interruption (__main__.Tests.test_06_process_interruption) ... ok
+test_07_naive_failure (__main__.Tests.test_07_naive_failure) ... ok
+test_08_request_schema (__main__.Tests.test_08_request_schema) ... ok
+test_09_http_envelope (__main__.Tests.test_09_http_envelope) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 6.365s
+
+OK
+
+EXIT_CODE=0

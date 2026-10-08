@@ -1,0 +1,8 @@
+test_02_idempotency (__main__.Tests.test_02_idempotency) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.462s
+
+OK
+
+EXIT_CODE=0

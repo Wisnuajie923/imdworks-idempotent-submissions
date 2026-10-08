@@ -1,0 +1,355 @@
+{
+  "elapsed_seconds": 6.846560159698129,
+  "errors": 0,
+  "exit_code": 0,
+  "failures": 0,
+  "http_client_operations": 222,
+  "ordering": "Trace sequence is observed completion/event order, not deterministic scheduling.",
+  "results": {
+    "http_envelope": {
+      "invalid_requests_not_persisted": true,
+      "maximum_key_length_accepted": true,
+      "rejected_cases": [
+        "wrong_route",
+        "query_route",
+        "slash_route",
+        "malformed_json",
+        "invalid_utf8",
+        "missing_key",
+        "empty_key",
+        "blank_key",
+        "long_key",
+        "bad_length",
+        "negative_length",
+        "missing_length",
+        "chunked",
+        "zero_length",
+        "oversize"
+      ]
+    },
+    "idempotency": {
+      "key_conflict": 409,
+      "reply_rows": 1,
+      "stable_after_restart": true
+    },
+    "lost_response": {
+      "commit_rows": 1,
+      "reply_recovered_after_SIGKILL": true,
+      "transport_lost": true
+    },
+    "naive": {
+      "expected_invariant_failure": "2 != 1 : one logical row invariant",
+      "logical_rows": 2,
+      "responses": [
+        [
+          201,
+          {
+            "bounty": "fixture-bounty",
+            "content": "initial",
+            "state": "active",
+            "version": 1,
+            "wallet": "synthetic-naive"
+          }
+        ],
+        [
+          201,
+          {
+            "bounty": "fixture-bounty",
+            "content": "initial",
+            "state": "active",
+            "version": 1,
+            "wallet": "synthetic-naive"
+          }
+        ]
+      ],
+      "rows": [
+        {
+          "bounty": "fixture-bounty",
+          "content": "initial",
+          "id": 1,
+          "state": "active",
+          "version": 1,
+          "wallet": "synthetic-naive"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "initial",
+          "id": 2,
+          "state": "active",
+          "version": 1,
+          "wallet": "synthetic-naive"
+        }
+      ]
+    },
+    "process_interruption": [
+      {
+        "kill_signal": 9,
+        "phase": "pause_before_commit",
+        "rows_before_retry": 0,
+        "stable_reply": true
+      },
+      {
+        "kill_signal": 9,
+        "phase": "pause_after_commit",
+        "rows_before_retry": 2,
+        "stable_reply": true
+      }
+    ],
+    "request_schema": {
+      "invalid_requests_not_persisted": true,
+      "maximum_string_lengths_accepted": true,
+      "rejected_cases": [
+        "unknown_action",
+        "bool_version",
+        "review_bool",
+        "missing_version",
+        "zero_version",
+        "float_version",
+        "negative_version",
+        "create_version",
+        "extra_field",
+        "missing_content",
+        "array",
+        "null",
+        "bounty_empty",
+        "bounty_whitespace",
+        "bounty_type",
+        "bounty_bool",
+        "bounty_long",
+        "wallet_empty",
+        "wallet_whitespace",
+        "wallet_type",
+        "wallet_bool",
+        "wallet_long",
+        "content_empty",
+        "content_whitespace",
+        "content_type",
+        "content_bool",
+        "content_long"
+      ]
+    },
+    "stress": {
+      "barrier_clients": 120,
+      "create_http_requests": 120,
+      "final_rows": [
+        {
+          "bounty": "fixture-bounty",
+          "content": "initial",
+          "id": 1,
+          "state": "reviewed",
+          "version": 2,
+          "wallet": "synthetic-00"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "initial",
+          "id": 4,
+          "state": "reviewed",
+          "version": 2,
+          "wallet": "synthetic-01"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "initial",
+          "id": 10,
+          "state": "reviewed",
+          "version": 2,
+          "wallet": "synthetic-02"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "edited",
+          "id": 6,
+          "state": "reviewed",
+          "version": 3,
+          "wallet": "synthetic-03"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "edited",
+          "id": 3,
+          "state": "reviewed",
+          "version": 3,
+          "wallet": "synthetic-04"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "edited",
+          "id": 2,
+          "state": "reviewed",
+          "version": 3,
+          "wallet": "synthetic-05"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "edited",
+          "id": 5,
+          "state": "reviewed",
+          "version": 3,
+          "wallet": "synthetic-06"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "edited",
+          "id": 9,
+          "state": "reviewed",
+          "version": 3,
+          "wallet": "synthetic-07"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "edited",
+          "id": 7,
+          "state": "reviewed",
+          "version": 3,
+          "wallet": "synthetic-08"
+        },
+        {
+          "bounty": "fixture-bounty",
+          "content": "edited",
+          "id": 8,
+          "state": "reviewed",
+          "version": 3,
+          "wallet": "synthetic-09"
+        }
+      ],
+      "measured_peak_inflight_client_operations": 115,
+      "race_http_requests": 20,
+      "race_winners_depend_on_scheduling": true,
+      "response_order": [
+        "stress-045",
+        "stress-075",
+        "stress-090",
+        "stress-106",
+        "stress-064",
+        "stress-111",
+        "stress-105",
+        "stress-083",
+        "stress-050",
+        "stress-118",
+        "stress-089",
+        "stress-073",
+        "stress-018",
+        "stress-087",
+        "stress-026",
+        "stress-070",
+        "stress-008",
+        "stress-028",
+        "stress-063",
+        "stress-101",
+        "stress-100",
+        "stress-007",
+        "stress-112",
+        "stress-116",
+        "stress-091",
+        "stress-046",
+        "stress-016",
+        "stress-042",
+        "stress-074",
+        "stress-025",
+        "stress-010",
+        "stress-062",
+        "stress-055",
+        "stress-098",
+        "stress-035",
+        "stress-103",
+        "stress-049",
+        "stress-086",
+        "stress-054",
+        "stress-051",
+        "stress-058",
+        "stress-036",
+        "stress-031",
+        "stress-108",
+        "stress-080",
+        "stress-094",
+        "stress-038",
+        "stress-093",
+        "stress-011",
+        "stress-059",
+        "stress-071",
+        "stress-043",
+        "stress-109",
+        "stress-033",
+        "stress-081",
+        "stress-119",
+        "stress-014",
+        "stress-097",
+        "stress-002",
+        "stress-067",
+        "stress-029",
+        "stress-114",
+        "stress-052",
+        "stress-079",
+        "stress-077",
+        "stress-065",
+        "stress-000",
+        "stress-068",
+        "stress-092",
+        "stress-015",
+        "stress-023",
+        "stress-099",
+        "stress-113",
+        "stress-061",
+        "stress-107",
+        "stress-056",
+        "stress-088",
+        "stress-041",
+        "stress-005",
+        "stress-078",
+        "stress-084",
+        "stress-020",
+        "stress-024",
+        "stress-053",
+        "stress-003",
+        "stress-039",
+        "stress-021",
+        "stress-019",
+        "stress-012",
+        "stress-001",
+        "stress-057",
+        "stress-085",
+        "stress-048",
+        "stress-009",
+        "stress-082",
+        "stress-115",
+        "stress-095",
+        "stress-072",
+        "stress-066",
+        "stress-034",
+        "stress-017",
+        "stress-104",
+        "stress-044",
+        "stress-006",
+        "stress-040",
+        "stress-004",
+        "stress-013",
+        "stress-030",
+        "stress-047",
+        "stress-022",
+        "stress-117",
+        "stress-110",
+        "stress-037",
+        "stress-096",
+        "stress-102",
+        "stress-060",
+        "stress-027",
+        "stress-069",
+        "stress-076",
+        "stress-032"
+      ],
+      "synthetic_wallets": 10
+    },
+    "unique": {
+      "direct_duplicate_insert": "IntegrityError",
+      "rows": 1
+    },
+    "versions": {
+      "final_version": 3,
+      "stale_reply_stable_after_advance": true
+    }
+  },
+  "success": true,
+  "tests_run": 9,
+  "trace_rows": 250
+}

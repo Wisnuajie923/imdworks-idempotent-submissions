@@ -1,0 +1,28 @@
+test_02_idempotency (__main__.Tests.test_02_idempotency) ... FAIL
+
+======================================================================
+FAIL: test_02_idempotency (__main__.Tests.test_02_idempotency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 99, in test_02_idempotency
+    self.assertEqual(self.s.call('idem-retry', p, 'shared-key'), first)
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (201, {'bounty': 'fixture-bounty', 'conten[69 chars]00'})
+
+First differing element 0:
+409
+201
+
+- (409, {'error': 'exists', 'version': 1})
++ (201,
++  {'bounty': 'fixture-bounty',
++   'content': 'initial',
++   'state': 'active',
++   'version': 1,
++   'wallet': 'synthetic-00'})
+
+----------------------------------------------------------------------
+Ran 1 test in 0.189s
+
+FAILED (failures=1)
+
+EXIT_CODE=1

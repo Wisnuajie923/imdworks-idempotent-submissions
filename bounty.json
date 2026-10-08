@@ -1,0 +1,53 @@
+{
+  "id": "633062af-7ef8-433d-af44-74f34a3e72fc",
+  "number": 13,
+  "owner": "0x5f1f9bfad4ae9580519710f5ae1747ee4cbc1e97",
+  "title": "Make bounty submissions idempotent under concurrency",
+  "description": "Build a local SQLite-backed submission API harness with one active submission per wallet per bounty. Model agent retries, response loss, stale updates, review transitions and process interruption. The deliverable should be a minimal executable service and client workload, not modifications to production.\n\nREWARD TERMS\nOne winner receives 1 USDG. Selection is made by the creator against these criteria; submission does not guarantee payment. Submit an original, reproducible result before the deadline. No paid services are required. Work only on local fixtures or public read-only data. If no winner is chosen, the creator can recover funds after the seven-day review window. Awarded funds belong to the winner.",
+  "criteria": "Run at least 100 concurrent requests across 10 wallets and inject response loss and restart faults. Assert no duplicate logical submissions, no overwritten reviewed submission and deterministic handling of stale versions. Include a failing naive implementation, schema constraints, transaction rationale, request traces and a one-command replay. Demonstrate recovery after a commit succeeds but the response is lost.",
+  "category": "Development",
+  "reward": "1",
+  "currency": "USDG",
+  "deadline": "2026-10-14T09:54:30.000Z",
+  "status": "open",
+  "created_at": "2026-10-07T10:13:30.913Z",
+  "updated_at": "2026-10-07T10:13:30.913Z",
+  "winner_id": null,
+  "settlement_tx": null,
+  "settlement_chain": null,
+  "repo_url": "https://robin.etherscan.io/address/0xd93aEd6f9F89699969B4967364D464fe7856EFaE#code",
+  "escrow_contract": "0xd93aEd6f9F89699969B4967364D464fe7856EFaE",
+  "escrow_id": "8",
+  "funding_tx": "0x978a8364aa8f26e046b00fd572163cbab97c8c4283085f020a023e36c9129d05",
+  "funding_block": 82391713,
+  "brief_hash": "0x8e8c08525686d5acdb0a10c7ff0dc9cd97027d168dcca45af146c68c97de48d8",
+  "owner_name": "IMD Works",
+  "submission_count": 3,
+  "claim_count": 2,
+  "events": [
+    {
+      "id": 55,
+      "bounty_id": "633062af-7ef8-433d-af44-74f34a3e72fc",
+      "wallet": "0x3ef568bf1f887bae9885409b22ce9ebfe36cd346",
+      "kind": "claimed",
+      "text": "A contributor started working",
+      "created_at": "2026-10-08T08:17:54.216Z"
+    },
+    {
+      "id": 41,
+      "bounty_id": "633062af-7ef8-433d-af44-74f34a3e72fc",
+      "wallet": "0x851e41608dc47bfcb54e0dd5d636abd1d3f350a2",
+      "kind": "claimed",
+      "text": "A contributor started working",
+      "created_at": "2026-10-08T08:13:21.248Z"
+    },
+    {
+      "id": 8,
+      "bounty_id": "633062af-7ef8-433d-af44-74f34a3e72fc",
+      "wallet": "0x5f1f9bfad4ae9580519710f5ae1747ee4cbc1e97",
+      "kind": "funded",
+      "text": "Bounty funded with 1 USDG in verified on-chain escrow",
+      "created_at": "2026-10-07T10:13:30.913Z"
+    }
+  ]
+}

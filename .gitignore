@@ -1,0 +1,7 @@
+# Generated runtime state only; retain trace/report and TDD evidence.
+__pycache__/
+*.py[cod]
+artifacts/*.sqlite
+artifacts/*.sqlite-*
+artifacts/*.sqlite.fault.json
+artifacts/*.sqlite.fault.json.tmp

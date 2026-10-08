@@ -1,0 +1,16 @@
+test_05_lost_response (__main__.Tests.test_05_lost_response) ... FAIL
+
+======================================================================
+FAIL: test_05_lost_response (__main__.Tests.test_05_lost_response)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 161, in test_05_lost_response
+    self.assertIsNone(lost, 'must actually lose HTTP response after commit')
+AssertionError: (201, {'bounty': 'fixture-bounty', 'content': 'initial', 'state': 'active', 'version': 1, 'wallet': 'synthetic-00'}) is not None : must actually lose HTTP response after commit
+
+----------------------------------------------------------------------
+Ran 1 test in 0.217s
+
+FAILED (failures=1)
+
+EXIT_CODE=1

@@ -1,0 +1,16 @@
+test_03_versions (__main__.Tests.test_03_versions) ... FAIL
+
+======================================================================
+FAIL: test_03_versions (__main__.Tests.test_03_versions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 111, in test_03_versions
+    self.assertEqual(updated[0], 200)
+AssertionError: 409 != 200
+
+----------------------------------------------------------------------
+Ran 1 test in 0.467s
+
+FAILED (failures=1)
+
+EXIT_CODE=1

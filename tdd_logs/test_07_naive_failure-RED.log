@@ -1,0 +1,16 @@
+test_07_naive_failure (__main__.Tests.test_07_naive_failure) ... FAIL
+
+======================================================================
+FAIL: test_07_naive_failure (__main__.Tests.test_07_naive_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 208, in test_07_naive_failure
+    self.assertEqual(len(rows),2,'naive read/read/insert/insert must violate logical uniqueness')
+AssertionError: 1 != 2 : naive read/read/insert/insert must violate logical uniqueness
+
+----------------------------------------------------------------------
+Ran 1 test in 0.456s
+
+FAILED (failures=1)
+
+EXIT_CODE=1

@@ -1,0 +1,16 @@
+test_06_process_interruption (__main__.Tests.test_06_process_interruption) ... FAIL
+
+======================================================================
+FAIL: test_06_process_interruption (__main__.Tests.test_06_process_interruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 183, in test_06_process_interruption
+    self.fail('missing actual transaction fault checkpoint: '+phase)
+AssertionError: missing actual transaction fault checkpoint: pause_before_commit
+
+----------------------------------------------------------------------
+Ran 1 test in 0.241s
+
+FAILED (failures=1)
+
+EXIT_CODE=1

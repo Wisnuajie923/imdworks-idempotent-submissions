@@ -1,0 +1,19 @@
+test_01_unique (__main__.Tests.test_01_unique) ... FAIL
+
+======================================================================
+FAIL: test_01_unique (__main__.Tests.test_01_unique)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 84, in test_01_unique
+    self.s.start()
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 32, in start
+    assert (ROOT / 'service.py').exists(), 'HTTP submission service not implemented'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: HTTP submission service not implemented
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)
+
+EXIT_CODE=1

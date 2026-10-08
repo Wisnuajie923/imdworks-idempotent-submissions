@@ -1,0 +1,44 @@
+{
+  "expected_invariant_failure": "2 != 1 : one logical row invariant",
+  "logical_rows": 2,
+  "responses": [
+    [
+      201,
+      {
+        "bounty": "fixture-bounty",
+        "content": "initial",
+        "state": "active",
+        "version": 1,
+        "wallet": "synthetic-naive"
+      }
+    ],
+    [
+      201,
+      {
+        "bounty": "fixture-bounty",
+        "content": "initial",
+        "state": "active",
+        "version": 1,
+        "wallet": "synthetic-naive"
+      }
+    ]
+  ],
+  "rows": [
+    {
+      "bounty": "fixture-bounty",
+      "content": "initial",
+      "id": 1,
+      "state": "active",
+      "version": 1,
+      "wallet": "synthetic-naive"
+    },
+    {
+      "bounty": "fixture-bounty",
+      "content": "initial",
+      "id": 2,
+      "state": "active",
+      "version": 1,
+      "wallet": "synthetic-naive"
+    }
+  ]
+}

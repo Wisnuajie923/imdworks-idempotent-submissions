@@ -1,0 +1,218 @@
+test_09_http_envelope (__main__.Tests.test_09_http_envelope) ... 
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='wrong_route') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='query_route') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='slash_route') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='malformed_json') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='invalid_utf8') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='missing_key') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='empty_key') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='blank_key') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='long_key') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='bad_length') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='negative_length') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='missing_length') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='chunked') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='zero_length') ... FAIL
+  test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='oversize') ... FAIL
+test_09_http_envelope (__main__.Tests.test_09_http_envelope) ... FAIL
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='wrong_route')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: Tuples differ: (201, {'bounty': 'fixture-bounty', 'conten[69 chars]00'}) != (404, {'error': 'not_found'})
+
+First differing element 0:
+201
+404
+
++ (404, {'error': 'not_found'})
+- (201,
+-  {'bounty': 'fixture-bounty',
+-   'content': 'initial',
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': 'synthetic-00'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='query_route')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (404, {'error': 'not_found'})
+
+First differing element 0:
+409
+404
+
+- (409, {'error': 'exists', 'version': 1})
++ (404, {'error': 'not_found'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='slash_route')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (404, {'error': 'not_found'})
+
+First differing element 0:
+409
+404
+
+- (409, {'error': 'exists', 'version': 1})
++ (404, {'error': 'not_found'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='malformed_json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: None != (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='invalid_utf8')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: None != (400, {'error': 'invalid_request'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='missing_key')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (400, {'error': 'invalid_key'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 1})
++ (400, {'error': 'invalid_key'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='empty_key')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (400, {'error': 'invalid_key'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 1})
++ (400, {'error': 'invalid_key'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='blank_key')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (400, {'error': 'invalid_key'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 1})
++ (400, {'error': 'invalid_key'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='long_key')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: Tuples differ: (409, {'error': 'exists', 'version': 1}) != (400, {'error': 'invalid_key'})
+
+First differing element 0:
+409
+400
+
+- (409, {'error': 'exists', 'version': 1})
++ (400, {'error': 'invalid_key'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='bad_length')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: None != (400, {'error': 'invalid_length'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='negative_length')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: None != (400, {'error': 'invalid_length'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='missing_length')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: None != (400, {'error': 'invalid_length'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='chunked')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: None != (400, {'error': 'invalid_length'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='zero_length')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: None != (400, {'error': 'invalid_length'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope) (case='oversize')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 292, in test_09_http_envelope
+    self.assertEqual(self.s.raw_call(label,body,headers,path),(status,{'error':error}))
+AssertionError: None != (413, {'error': 'too_large'})
+
+======================================================================
+FAIL: test_09_http_envelope (__main__.Tests.test_09_http_envelope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 294, in test_09_http_envelope
+    self.assertEqual(self.s.rows(),[])
+AssertionError: Lists differ: [{'id': 1, 'bounty': 'fixture-bounty', 'wa[73 chars]: 1}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'id': 1, 'bounty': 'fixture-bounty', 'wallet': 'synthetic-00', 'content': 'initial', 'state': 'active', 'version': 1}
+
++ []
+- [{'bounty': 'fixture-bounty',
+-   'content': 'initial',
+-   'id': 1,
+-   'state': 'active',
+-   'version': 1,
+-   'wallet': 'synthetic-00'}]
+
+----------------------------------------------------------------------
+Ran 1 test in 6.467s
+
+FAILED (failures=16)
+
+EXIT_CODE=1

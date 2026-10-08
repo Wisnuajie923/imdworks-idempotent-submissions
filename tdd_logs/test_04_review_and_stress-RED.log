@@ -1,0 +1,16 @@
+test_04_review_and_stress (__main__.Tests.test_04_review_and_stress) ... FAIL
+
+======================================================================
+FAIL: test_04_review_and_stress (__main__.Tests.test_04_review_and_stress)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/root/imdworks-work/idempotent-submissions/run_tests.py", line 146, in test_04_review_and_stress
+    self.assertEqual(self.s.call(f'finish-review-{i}', request(w,'review',2))[0],200)
+AssertionError: 409 != 200
+
+----------------------------------------------------------------------
+Ran 1 test in 4.176s
+
+FAILED (failures=1)
+
+EXIT_CODE=1
